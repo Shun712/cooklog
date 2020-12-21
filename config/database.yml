@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: cooklog_production
-  username: cooklog
-  password: <%= ENV['COOKLOG_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  
