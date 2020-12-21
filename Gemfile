@@ -38,6 +38,8 @@ group :development, :test do
   gem 'sqlite3' # sqlite3
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 4.0.0.beta2'  # 追記
+  gem 'rails-controller-testing'  # 追記
 end
 
 group :development do
@@ -47,6 +49,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-commands-rspec'  # 追記
 end
 
 group :test do
@@ -55,11 +58,14 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'webdrivers'  # 追記
 end
 
 group :production do # 本番環境
   gem 'pg' # PostgreSQL
 end
+
+gem 'devise'  # 追記
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
