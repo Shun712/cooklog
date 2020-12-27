@@ -15,7 +15,6 @@ RSpec.describe "Users", type: :system do
           expect(page).to have_link u.name, href: user_path(u)
           expect(page).to have_content "#{u.name} | 削除" unless u == admin_user
         end
-        end
       end
     end
 
