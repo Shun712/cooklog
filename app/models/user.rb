@@ -40,6 +40,11 @@ class User < ApplicationRecord
     def forget
       update_attribute(:remember_digest, nil)
     end
+    
+    # フィード一覧を取得
+    def feed
+      Dish.where("user_id = ?", id)
+    end
                     
   private
     def downcase_email

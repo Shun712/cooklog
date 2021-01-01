@@ -1,5 +1,12 @@
-<center>
-  <h1>クックログへようこそ！</h1>
-  <h2>あなたのお料理(クック)ログ、作りませんか？</h2>
-  <p>今日のレシピ、もう迷わない！</p>
-</center>
+<% if logged_in? %>
+  <div class="container">
+    <h3>みんなの料理 (<%= @feed_items.count %>)</h3>
+    <%= render 'shared/feed' %>
+  </div>
+<% else %>
+  <center>
+    <h1>クックログへようこそ！</h1>
+    <h2>あなたのお料理(クック)ログ、作りませんか？</h2>
+    <p>今日のレシピ、もう迷わない！</p>
+  </center>
+<% end %>
