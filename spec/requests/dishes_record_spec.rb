@@ -26,7 +26,7 @@ RSpec.describe "お料理登録", type: :request do
                                               popularity: 5 } }
         }.to change(Dish, :count).by(1)
         follow_redirect!
-        expect(response).to render_template('static_pages/home')
+        expect(response).to render_template('dishes/show')
       end
   
       it "無効な料理データでは登録できないこと" do
