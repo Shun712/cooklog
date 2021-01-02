@@ -1,7 +1,13 @@
 <% provide(:title, "#{@dish.name}") %>
 <div class="container">
   <div class="row">
-    <h2 class="dish-name"><%= @dish.name %></h2>
+    <div class="col-md-4">
+      <span class="picture">
+        <%= link_to((image_tag @dish.picture.thumb400.url), dish_path(@dish.id), class: 'dish-picture') if @dish.picture.url.present? %>      
+      </span>
+    </div>
+    <div class="col-md-8">
+      <h2 class="dish-name"><%= @dish.name %></h2>
     <div class="change-dish">
       <% if current_user == @dish.user %>
         <%= link_to "編集", edit_dish_path(@dish), class: 'edit-dish' %>　
