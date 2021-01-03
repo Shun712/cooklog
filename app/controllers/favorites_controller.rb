@@ -19,4 +19,8 @@ class FavoritesController < ApplicationController
       format.js
     end
   end
+
+  def index
+    @favorites = current_user.favorites
+  end
 end
