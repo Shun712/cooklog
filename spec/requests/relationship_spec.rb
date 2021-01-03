@@ -49,4 +49,23 @@ RSpec.describe "ユーザーフォロー機能", type: :request do
       expect(response).to redirect_to login_path
     end
   end
+
+  describe "フィード" do
+    before do
+      create(:relationship, follower_id: user.id, followed_id: user2.id)
+      login_for_system(user)
+    end
+
+    it "フィードに自分の投稿が含まれていること" do
+      expect(user.feed).to include dish
+    end
+
+    it "フィードにフォロー中ユーザーの投稿が含まれていること" do
+      expect(user.feed).to include dish2
+    end
+
+    it "フィードにフォローしていないユーザーの投稿が含まれていないこと" do
+      expect(user.feed).not_to include dish3
+    end
+  end
 end
