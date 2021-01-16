@@ -352,3 +352,34 @@ li.new_notification > a > span {
 .notification-message {
   font-size: 16px;
 }
+
+//// リスト ////
+.list-btn-unlist {
+  color: red;
+  margin: 10px 0;
+}
+
+.list-btn-list {
+  color: grey;
+  margin: 10px 0;
+}
+
+a.list, a.unlist {
+  text-decoration: none;
+}
+
+.lists {
+  list-style: none;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8 ;
+  }
+}
+
+.list-message {
+  font-size: 16px;
+}
+
+.list-dish-description {
+  margin-bottom: 20px;
+}

@@ -11,6 +11,7 @@ class User < ApplicationRecord
                                    dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :favorites, dependent: :destroy
+  has_many :lists, dependent: :destroy
   before_save :downcase_email
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -93,6 +94,21 @@ class User < ApplicationRecord
     def favorite?(dish)
       !Favorite.find_by(user_id: id, dish_id: dish.id).nil?
     end
+
+    # 料理をリストに登録する
+  def list(dish)
+    List.create!(user_id: dish.user_id, dish_id: dish.id, from_user_id: id)
+  end
+
+  # 料理をリストから解除する
+  def unlist(list)
+    list.destroy
+  end
+
+  # 現在のユーザーがリスト登録してたらtrueを返す
+  def list?(dish)
+    !List.find_by(dish_id: dish.id, from_user_id: id).nil?
+  end
                     
   private
     def downcase_email
