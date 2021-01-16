@@ -1,0 +1,11 @@
+<% list = List.find_by(dish_id: @dish.id) %>
+<%= link_to "/lists/#{list.id}/destroy",
+            method: :delete,
+            class: 'unlist',
+            remote: true do %>
+  <% if current_user == @dish.user %>
+    <div class="list-btn-unlist"><i class="fas fa-list-alt"></i> 作る予定リストに追加済み</div>
+  <% else %>
+    <div class="list-btn-unlist"><i class="fas fa-utensils"></i> 食べたいリクエスト済み</div>
+  <% end %>
+<% end %>
