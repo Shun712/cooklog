@@ -9,12 +9,14 @@ class DishesController < ApplicationController
   def show
     @dish = Dish.find(params[:id])
     @comment = Comment.new
+    @log = Log.new
   end
 
   def create
     @dish = current_user.dishes.build(dish_params)
     if @dish.save
       flash[:success] = "料理が登録されました！"
+      Log.create(dish_id: @dish.id, content: @dish.cook_memo)
       redirect_to dish_path(@dish)
     else
       render 'dishes/new'

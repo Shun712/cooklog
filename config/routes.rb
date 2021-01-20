@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :notifications, only: :index
   resources :comments, only: [:create, :destroy]
   resources :notifications, only: :index
+  resources :logs, only: [:create, :destroy]
   get :lists, to: 'lists#index'
   post   "lists/:dish_id/create"  => "lists#create"
   delete "lists/:list_id/destroy" => "lists#destroy"
