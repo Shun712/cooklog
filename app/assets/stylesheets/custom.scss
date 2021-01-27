@@ -1,5 +1,5 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+$main-magenta: #dd356e ;
+$main-yellow: #fee856 ;
 
 // ミックスイン
 @mixin box_sizing {
@@ -8,77 +8,58 @@
   box-sizing:         border-box;
 }
 
-// 全ページ共通
-body {
-  padding-top: 60px;
-}
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
-}
-
-// テキストの見栄え
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #777 ;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
 // ヘッダー
-.navbar ul{
-  margin-top: 12px;
-  margin-bottom: 12px;
+.menu-1 a:hover {
+  text-decoration: none;
+  text-decoration-width: 1px;
 }
- #logo  {
-  float: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  img {
-    width: 150px;
+
+// 上下幅
+.fh5co-nav .top-menu {
+  padding: 18px 0;
+}
+
+//// ページボディ部 //// 
+#fh5co-portfolio {
+  padding: 0;
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
   }
+  h3 {
+    text-align: left;
+  }
+}
+
+#logo  {
+  img {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #logo  {
+    img {
+      max-width: 400%;
+      height: auto;
+      box-sizing: border-box;
+    }
+  }
+}
+
+// スマホ閲覧時、横棒三本をページ上部に固定
+.fh5co-nav-toggle {
+  position: fixed;
+}
+
+// ロゴの上下位置調整
+.fh5co-nav #fh5co-logo {
+  font-size: 0px;
 }
 
 // フッター
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea ;
-  color: #777 ;
-  small {
-    float: center;
-  }
-}
-
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb ;
   width: 100%;
@@ -117,6 +98,12 @@ input {
   margin-left: 0;
 }
 
+#fh5co-footer {
+  margin-top: 3em;
+  padding: 1em 0;
+  border-top: 1px solid #eaeaea ;
+}
+
 //// プロフィールページ ////
 .title-profile {
   padding-bottom: 10px;
@@ -139,6 +126,10 @@ input {
 }
 
 .account-edit {
+  margin-top: 20px;
+}
+
+.account-delete {
   margin-top: 20px;
 }
 
@@ -331,6 +322,37 @@ a.like, a.unlike {
   }
 }
 
+.cook-user {
+  margin-bottom: 20px;
+ }
+
+// 料理一覧
+.dish-user {
+  text-align: right;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+h3.dish-name {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.dish-description {
+  margin-top: 10px;
+}
+
+// リスト
+.list-button {
+ margin-bottom: 20px;
+}
+
+// ログ
+.add-cooklog {
+ font-weight: bold;
+}
+
 ////通知 ////
 // 新しい通知があるときは赤文字にする
 li.new_notification > a > span {
@@ -405,4 +427,29 @@ a.list, a.unlist {
       font-size: 14px;
     }
   }
+}
+
+//// ページボディ部 //// 
+#fh5co-about {
+  padding: 0;
+}
+
+//// ページボディ部 //// 
+#fh5co-wireframe {
+  padding-top: 7em;
+  padding-bottom: 0;
+}
+
+.btn-record {
+  margin-top: 3em;
+  color: black;
+  background-color: $main-yellow;
+  border-color: $main-yellow;
+}
+
+// 「CSV出力」ボタン
+.btn-csv {
+  color: black;
+  background-color: palegreen;
+  border-color: palegreen;
 }
