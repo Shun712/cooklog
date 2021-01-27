@@ -304,6 +304,37 @@ a.like, a.unlike {
   }
 }
 
+.cook-user {
+  margin-bottom: 20px;
+ }
+
+// 料理一覧
+.dish-user {
+  text-align: right;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+h3.dish-name {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.dish-description {
+  margin-top: 10px;
+}
+
+// リスト
+.list-button {
+ margin-bottom: 20px;
+}
+
+// ログ
+.add-cooklog {
+ font-weight: bold;
+}
+
 ////通知 ////
 // 新しい通知があるときは赤文字にする
 li.new_notification > a > span {
