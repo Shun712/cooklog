@@ -97,6 +97,10 @@ RSpec.describe "Dishes", type: :system do
         expect(page).to have_content dish.required_time
         expect(page).to have_content dish.popularity
         expect(page).to have_link nil, href: dish_path(dish), class: 'dish-picture'
+        dish.ingredients.each do |i|
+          expect(page).to have_content i.name
+          expect(page).to have_content i.quantity
+        end
       end
     end
 
