@@ -39,6 +39,21 @@ $main-yellow: #fee856 ;
   }
 }
 
+@media screen and (max-width: 768px) {
+  #logo  {
+    img {
+      max-width: 400%;
+      height: auto;
+      box-sizing: border-box;
+    }
+  }
+}
+
+// スマホ閲覧時、横棒三本をページ上部に固定
+.fh5co-nav-toggle {
+  position: fixed;
+}
+
 // ロゴの上下位置調整
 .fh5co-nav #fh5co-logo {
   font-size: 0px;
@@ -415,12 +430,12 @@ a.list, a.unlist {
 }
 
 //// ページボディ部 //// 
-#fh5co -about {
+#fh5co-about {
   padding: 0;
 }
 
 //// ページボディ部 //// 
-#fh5co -wireframe {
+#fh5co-wireframe {
   padding-top: 7em;
   padding-bottom: 0;
 }
